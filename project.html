@@ -31,7 +31,7 @@
             background-color: green;
             float: left;
             width:1138px;
-            height:75%
+            height:75%;
         }
 
         .header-div {
@@ -50,13 +50,14 @@
             font-family:Verdana, Geneva, Tahoma, sans-serif;
         }
 
-        .nav-content1-parent {
+        .nav-parent {
             display:block;
             text-align: center;
             width: 357px;
             font-size: 38px;
             background-color: black;
-            border-bottom: 2px solid greenyellow;
+            border-bottom: 5px solid greenyellow;
+            border-top:4px solid greenyellow;
         }
         nav > div > div {
             text-align: left;
@@ -70,7 +71,49 @@
     </style>
 
     <script>
+        $(document).ready(function() {
+            // 왼쪽 nav 위젯 슬라이드 적용
+            $('#p1').ready(function() {
+                $('#p1_c').hide();
+            });
+            $('#p1').on("click", function() {
+                $('#p1_c').slideToggle();
+            });
+            $('#p2').ready(function() {
+                $('#p2_c').hide();
+            });
+            $('#p2').on("click", function() {
+                $('#p2_c').slideToggle();
+            });
+            $('#p3').ready(function() {
+                $('#p3_c').hide();
+            });
+            $('#p3').on("click", function() {
+                $('#p3_c').slideToggle();
+            });
 
+            $('.w1').on("click", function() {
+                $('.section_win').attr('src', 'widget_html_folder/efz.html');
+            });
+            $('.w2').on("click", function() {
+                $('.section_win').attr('src', 'widget_html_folder/bb.html');
+            });
+            $('.w3').on("click", function() {
+                $('.section_win').attr('src', 'widget_html_folder/sh.html');
+            });
+            $('.cs').on("click", function() {
+                $('.section_win').attr('src', 'widget_html_folder/comingsoon.html');
+            })
+            $('.a1').on("click", function() {
+                $('.section_win').attr('src', 'widget_html_folder/award1.html');
+            });
+            $('.a2').on("click", function() {
+                $('.section_win').attr('src', 'widget_html_folder/award2.html');
+            });
+            $('.a3').on("click", function() {
+                $('.section_win').attr('src', 'widget_html_folder/award3.html');
+            });
+        });
     </script>
 </head>
 <body>
@@ -97,35 +140,34 @@
         </div>
     </header>
     <nav class="nav">
-        <div class="nav-content1-parent">
+        <div class="nav-parent" id="p1">
             Completed Projects
         </div>
-        <div class="nav-content1-child">
-            <div> ▶ Escaping from Zombies</div>
-            <div> ▶ Boss Beat</div>
-            <div> ▶ StoneHenge</div>
+        <div class="nav-content1-child" id="p1_c">
+            <div class="w1"> ▶ Escaping from Zombies</div>
+            <div class="w2" > ▶ Boss Beat</div>
+            <div class="w3"> ▶ StoneHenge</div>
         </div>
-        <div class="nav-content1-parent">
+        <div class="nav-parent" id="p2">
             Projects on Progress
         </div>
-        <div class="nav-content1-child">
-            <div> ▶ Coming Soon</div>
-            <div> ▶ Coming Soon</div>
-            <div> ▶ Coming Soon</div>
-            <div> ▶ Coming Soon</div>
+        <div class="nav-content1-child" id="p2_c">
+            <div class="cs"> ▶ Coming Soon</div>
+            <div class="cs"> ▶ Coming Soon</div>
+            <div class="cs"> ▶ Coming Soon</div>
+            <div class="cs"> ▶ Coming Soon</div>
         </div>
-        <div class="nav-content1-parent">
+        <div class="nav-parent" id="p3">
             Awards
         </div>
-        <div class="nav-content1-child">
-            <div> ▶ Coming Soon</div>
-            <div> ▶ Coming Soon</div>
-            <div> ▶ Coming Soon</div>
-            
+        <div class="nav-content1-child" id="p3_c">
+            <div class="a1"> ▶ SW텀프로젝트 결과물대회</div>
+            <div class="a2"> ▶ 2022년 GitHub 이력서 해커톤</div>
+            <div class="a3"> ▶ 2022년 SW 창업 아이디어 경진대회</div>
         </div>
     </nav>
     <section class="section">
-        <iframe src="project_dummy.html" width="1138px" height="525px"></iframe>
+        <iframe class="section_win" src="project_dummy.html" width="1138px" height="525px"></iframe>
     </section>
     
 </body>
