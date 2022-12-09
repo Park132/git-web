@@ -10,7 +10,7 @@
         body{
             border:3px solid greenyellow;
             width:1500px;
-            height:800px;
+            height:750px;
             
         }
         .header {
@@ -32,6 +32,15 @@
             float: left;
             width:1138px;
             height:75%;
+        }
+        footer {
+            position: absolute;
+            transform: translate(32%, 1770%);
+            float: left;
+            width: 1138px;
+            height: 30px;
+            background-color: greenyellow;
+            color: black;
         }
 
         .header-div {
@@ -71,6 +80,7 @@
     </style>
 
     <script>
+        //jquery 들
         $(document).ready(function() {
             // 왼쪽 nav 위젯 슬라이드 적용
             $('#p1').ready(function() {
@@ -114,6 +124,21 @@
                 $('.section_win').attr('src', 'widget_html_folder/award3.html');
             });
         });
+    </script>
+
+    <script>
+        // javascript
+        var span1 = document.getElementById("span");
+        var timerID = setInterval("doRotate()", 200);
+
+        function doRotate() {
+	        var str = span.innerHTML;
+	        var firstChar = str.substr(0, 1);
+	        var remains = str.substr(1, str.length-1);
+	        str = remains + firstChar;
+	        span.innerHTML = str; 
+        }
+
     </script>
 </head>
 <body>
@@ -170,6 +195,6 @@
         <iframe class="section_win" src="project_dummy.html" width="1138px" height="525px"></iframe>
     </section>
     <footer>
-        test123
+        <span id="span" style="padding : 4px;">Today's Weather : Unknown, Unknown °C / Today's News : Uknown_News1, Unknown_News2 / Playlist : Unknown / ← Under Development</span>
     </footer>
 </body>
